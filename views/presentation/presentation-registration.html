@@ -1,0 +1,32 @@
+<!doctype html>
+<html ng-app="presentations">
+    <head>
+        <meta charset="UTF-8">
+        <title>
+            Event4You - Global Azure Brasilia
+        </title>
+        
+        <link rel="stylesheet" href="../../lib/bootstrap/bootstrap.min.css">
+        <link rel="stylesheet" href="../../css/app.css">
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+        <script src="../../js/presentationsCtrl.js"></script>
+    </head>
+<body ng-controller="presentationsCtrl">
+    <div class="jumbotron">
+        <h1>{{app}}</h1>
+        
+        <form name="presentationForm">
+			<input class="form-control" type="text" ng-model="presentation.Title" name="Title" placeholder="Title" ng-required="true"/><br />
+			<input class="form-control" type="text" ng-model="presentation.Description" name="Description" placeholder="Description"/><br />
+            <input class="form-control" type="text" ng-model="presentation.SpeakerName" name="SpeakerName" placeholder="SpeakerName"/><br />
+            <input class="form-control" type="text" ng-model="presentation.Room" name="Room" placeholder="Room"/><br />
+            <select class="form-control" ng-model="presentation.Event" ng-options="event.Title + ' ( ' + (event.Name) + ' )' for event in events | orderBy:'Name'">
+				<option value="">Select an event for Speaker</option>
+			</select>
+		</form>
+        <br />
+        <button class="btn btn-primary btn-block" ng-click="addPresentation(presentation)" ng-disabled="presentationForm.$invalid">Save</button>
+    </div>
+</body>
+</html>

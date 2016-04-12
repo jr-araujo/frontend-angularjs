@@ -1,0 +1,53 @@
+<!doctype html>
+<html ng-app="events">
+    <head>
+        <meta charset="UTF-8">
+        <title>
+            Event4You - Global Azure Brasilia
+        </title>
+        
+        <link rel="stylesheet" href="../../lib/bootstrap/bootstrap.min.css">
+        <link rel="stylesheet" href="../../css/app.css">
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+        <script src="../../js/eventsCtrl.js"></script>
+    </head>
+<body ng-controller="eventsCtrl">
+    <div class="jumbotron">
+        <h1>{{appList}}</h1>
+        <table ng-show="events.length > 0" class="table">
+            <tr>
+                <th></th>
+                <th>Name</th>
+                <th>Title</th>
+                <th>Start Date</th>
+                <th>End Date</th>
+                <th>Local Description</th>                
+            </tr>
+            <tr ng-repeat="event in events">
+                <td><a href="#" ng-click="listAllPresentationsByEventName(event.Name)">View Presentations</a></td>
+                <td>{{event.Name}}</td>
+                <td>{{event.Title}}</td>
+                <td>{{event.StartDate}}</td>
+                <td>{{event.EndDate}}</td>
+                <td>{{event.LocalDescription}}</td>
+            </tr>
+        </table>
+        <hr />
+        <table ng-show="presentations.length > 0" class="table" title="Presentations">
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Speaker</th>
+                <th>Room</th>                
+            </tr>
+            <tr ng-repeat="presentation in presentations">
+                <td>{{presentation.Title}}</td>
+                <td>{{presentation.Description}}</td>
+                <td>{{presentation.Speaker}}</td>
+                <td>{{presentation.Room}}</td>                
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

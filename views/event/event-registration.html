@@ -1,0 +1,28 @@
+<!doctype html>
+<html ng-app="events">
+    <head>
+        <meta charset="UTF-8">
+        <title>
+            Event4You - Global Azure Brasilia
+        </title>
+        
+        <link rel="stylesheet" href="../../lib/bootstrap/bootstrap.min.css">
+        <link rel="stylesheet" href="../../css/app.css">
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+        <script src="../../js/eventsCtrl.js"></script>
+    </head>
+<body ng-controller="eventsCtrl">
+    <div class="jumbotron">
+        <h1>{{app}}</h1>
+        <form name="eventForm">
+			<input class="form-control" type="text" ng-model="event.Name" name="Name" placeholder="Name" ng-required="true"/><br />
+			<input class="form-control" type="text" ng-model="event.Title" name="Title" placeholder="Title" ng-required="true"/><br />
+			<input class="form-control" type="text" ng-model="event.StartDate" name="StartDate" placeholder="Start Date"/><br />
+            <input class="form-control" type="text" ng-model="event.EndDate" name="EndDate" placeholder="End Date"/><br />
+            <input class="form-control" type="text" ng-model="event.LocalDescription" name="LocalDescription" placeholder="Local Description"/><br />
+		</form>
+        <button class="btn btn-primary btn-block" ng-click="addEvent(event)" ng-disabled="eventForm.$invalid">Save</button>
+    </div>
+</body>
+</html>
