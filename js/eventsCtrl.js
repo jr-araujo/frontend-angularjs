@@ -1,7 +1,7 @@
 angular.module("events", []);
 angular.module("events").controller("eventsCtrl", function($scope, $http) {
     // var baseUrl = "http://localhost:8080/";
-    var baseUrl = "http://gab-node-sample.azurewebsites.net/";
+    var baseUrl = "http://node-redis-sample.azurewebsites.net/";
     $scope.app = "Event Registration";
     $scope.appList = "Events List";
     $scope.events = [];
