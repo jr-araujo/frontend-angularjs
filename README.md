@@ -1,1 +1,1 @@
-# frontend-gab-2016
+# Frontend that was built using AngularJS as Framework MV*
