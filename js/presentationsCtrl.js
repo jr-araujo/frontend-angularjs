@@ -1,6 +1,7 @@
 angular.module("presentations", []);
 angular.module("presentations").controller("presentationsCtrl", function($scope, $http) {
     var baseUrl = "http://node-redis-sample.azurewebsites.net/";
+    
     $scope.app = "Presentation Registration";
     $scope.events = [];
     
